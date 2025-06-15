@@ -1,0 +1,216 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: century gothic;
+}
+button{
+    cursor: pointer;
+}
+.quick_nav_bar{
+    display: flex;
+    height: 70px;
+    justify-content: space-evenly;
+    align-items: baseline;
+    background-color: rgb(13, 22, 13);
+}
+#logo{
+    font-family: sans-serif;
+    color: white;
+    font-size: 20px;
+    font-weight: bolder;
+    border: 0.5px solid white;
+    padding: 15px;
+}
+#search_bar{
+    display: flex;
+    height: 80%;
+    width: 600px;
+}
+#user_Acc{
+    height: 100%;
+    width: 70px;
+}
+#appointments{
+    height: 100%;
+    width:150px;
+}
+#updates_notifications{
+    height: 100%;
+    width: 70px;
+}
+#hit_to_search_button{
+    height: 100%;
+    width: 70px;
+    background: none;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: white;
+    border-left: 0.5px solid white ;
+}
+#hit_to_search_button:hover{
+    border-radius: 0 8px 8px 0;
+    color: rgb(0, 176, 152);
+}
+#search_bar{
+    border: 0.5px white solid;
+    border-radius: 8px;
+    height: 60%;
+}
+#input_bar{
+    width: 100%;
+    border:none;
+    outline: 0;
+    font-size: 18px;
+    padding-left: 10px;
+    padding: 20px;
+    border-radius: 8px 0 0 8px;
+}
+#input_bar:focus{
+    box-shadow: 0 0 10px 1px solid green;
+}
+#user_account{
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: white;
+}
+#user_account:hover{
+    color:rgb(0, 176, 152) ;
+}
+#my_appointments{
+    height: 70%;
+    width: 100%;
+    background: none;
+    border: 0.5px white solid;
+    color: white;
+    font-size: 15px;
+    border-radius: 4px;
+}
+#my_appointments:hover{
+    background-color: white;
+    color: rgb(0, 176, 152);
+}
+#notification_bell{
+    height: 70%;
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+}
+input::placeholder{
+    font-style: italic;
+    padding-left: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#notification_bell:hover{
+    animation: ring 0.25s  normal 2 ;
+}
+@keyframes ring {
+    0%{
+        padding-left:7px ;
+    }
+    50%{
+        padding-right:7px ;
+    }
+    100%{
+        padding:0 ;
+    }
+}
+.introduction{
+    padding-top: 160px;
+    text-align: center;
+    width: 100vw;
+    height: 600px;
+    background: linear-gradient(to bottom, rgb(13, 22, 13) , rgba(0, 108, 42,0.95)) ,url(OIP2.jpg);
+    background-size: cover;
+    background-blend-mode: multiply;
+    display: grid;
+    place-items: center;
+    color: white;
+    grid-template-rows: 100px 100px 100px 100px;
+}
+#welcome {
+  font-size: 40px;
+  font-weight: bolder;
+  white-space: nowrap;
+  overflow: hidden;    
+  width: 0;
+  animation: typewriter 2s steps(28, end) 1 forwards;
+}
+#description{
+    font-size:20px
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 28ch;
+  }
+}
+.available_categories{
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 350px 350px 350px 350px;
+}
+.item{
+    display: flex;
+    height: 500px;
+    width: 350px;
+    box-shadow: 5px 10px 10px rgb(165, 165, 165) ;
+    margin-left: 10px;
+    border-radius: 8px;
+    border-top: 1px solid green;
+    border-left: 1px solid green;
+    justify-content: center;
+    cursor: pointer;
+    animation: appear 3s;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+.image_of_type{
+    margin-top: 20px;
+    height: 240px;
+    width: 300px;
+}
+.service_image{
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 100, 0, 0.546);
+}
+.buttons{
+    height: 60px;
+    width: 300px;
+    border-radius:30px;
+    font-size: 15px ;
+    background-color: rgba(25, 110, 37, 0.346);
+    box-shadow: 0 0 5px ;
+    border: 0.25px white solid;
+    color: white;
+    cursor: pointer;
+}
+.buttons:hover{
+    box-shadow: 0 0 5px rgb(0, 128, 79);
+    background-color: rgb(255, 255, 255);
+    color: rgb(25,110,37);
+}
+#heading_2{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 50px;
+}
+@keyframes appear {
+    0%{
+        opacity: 0;
+        scale:0.5;
+    }
+    100%{
+        opacity: 1;
+        scale: 1;
+    }
+}
