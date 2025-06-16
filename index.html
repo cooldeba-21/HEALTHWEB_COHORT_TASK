@@ -1,71 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>N6T Technology</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .reset-button {
+      background-color: #ff4d4d;
+      color: white;
+      border: none;
+      padding: 8px 14px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    .reset-button:hover {
+      background-color: #e04343;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <div class = "quick_nav_bar">
-            <div id="logo">
-                N6T Technology
-            </div>
-            <div id="user_Acc">
-                <button id="user_account"><i class="fa-solid fa-user"></i></button>
-            </div>
+  <div id="nameOverlay" style="position: fixed; inset: 0; background-color: rgba(0,0,0,0.85); display: flex; align-items: center; justify-content: center; z-index: 9999;">
+    <div style="background: white; padding: 40px; border-radius: 10px; text-align: center;">
+      <h2>Welcome! What's your name?</h2>
+      <input type="text" id="userNameInput" placeholder="Enter your name" style="padding: 10px; width: 80%; margin: 15px 0; font-size: 16px;" />
+      <br>
+      <button onclick="saveUserName()" style="padding: 10px 25px; font-size: 16px;">Continue</button>
+    </div>
+  </div>
 
-            <div id="search_bar">
-                <input placeholder="Search..." id="input_bar">
+  <header>
+    <div class="quick_nav_bar">
+      <div id="logo">N6T Technology</div>
 
-                <div id="search_icon">
-                    <button id="hit_to_search_button"><i class="fa-solid fa-magnifying-glass"></i></button>
-                </div>
-            </div>
-
-            <div id ="appointments">
-                <button id ="my_appointments">Appointments</button>
-            </div>
-
-            <div id = "updates_notifications">
-                <button id ="notification_bell"><i class="fa-solid fa-bell"></i></button>
-            </div>
+      <div id="search_bar">
+        <input placeholder="Search..." id="input_bar" />
+        <div id="search_icon">
+          <button id="hit_to_search_button"><i class="fa-solid fa-magnifying-glass"></i></button>
         </div>
-        </div>
-    </header>
-    <hr>
-    <main>
-        <div class="introduction">
-            <h1 id = "welcome">Welcome to N6T-Technology!!</h1>
-            <p id ="description">Transformig the field of medical appointments</p>
-           
-            
-                <button class="login_button buttons">Sign In</button>
-                <button class ="signup_button buttons">Sign Up</button>
+      </div>
 
-    
-                 <h1 class = "bottom_text">We Care, For You and Your Heath</h1>
+      <div id="appointments">
+        <button id="my_appointments">Appointments</button>
+      </div>
 
+      <div id="updates_notifications">
+        <button id="notification_bell"><i class="fa-solid fa-bell"></i></button>
+      </div>
 
-        </div>
-        <h1 id="heading_2">Explore our Specialists :</h1>
-        <div class ="available_categories">
-         
-            <div class="item">
-                  <!--  <div class="image_of_type">
-                    <img src="eye_care.jpg" class = "service_image">
-                         <div class="text_in_grid">
-                            <br>
-                            <h2>Eye Care Specialists</h2>
-                         </div>
-                </div>
-                 -->
-            </div>
-           
-        </div>
-    </main>
-<script src="script.js"></script>
+      <div id="user_Acc">
+        <button id="user_account"><i class="fa-solid fa-user"></i></button>
+      </div>
+
+      <div id="help_icon">
+        <button title="Help & Support"><i class="fa-solid fa-circle-question"></i></button>
+      </div>
+
+      <div id="lang_selector">
+        <select title="Select Language">
+          <option value="en">EN</option>
+          <option value="es">ES</option>
+          <option value="hi">HI</option>
+          <option value="fr">FR</option>
+        </select>
+      </div>
+
+      <div id="auth_nav_buttons" style="display: flex; gap: 10px;">
+        <a href="signin.html"><button class="buttons small">Sign In</button></a>
+        <a href="#"><button class="buttons small">Sign Up</button></a>
+      </div>
+
+      <div id="emergency">
+        <button class="emergency_button"><i class="fa-solid fa-phone-volume"></i> Emergency</button>
+      </div>
+
+      <div id="dark_toggle">
+        <label class="switch">
+          <input type="checkbox" id="darkModeSwitch" />
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <div id="reset_preferences">
+        <button onclick="resetUser()" title="Clear name and dark mode" class="buttons small reset-button">
+          <i class="fa-solid fa-rotate-left"></i> Reset
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <hr />
+
+  <main>
+    <div class="introduction">
+      <h1 id="welcome">Welcome to N6T-Technology!!</h1>
+      <p id="description">Transforming the field of medical appointments</p>
+      <h1 class="bottom_text">We Care, For You and Your Health</h1>
+      <h2 id="personal_greeting" style="animation: fadeIn 2s ease forwards; opacity: 0;"></h2>
+    </div>
+
+    <section style="margin-top: 40px; text-align: center;">
+      <h2 style="margin-bottom: 20px;">Quick Access</h2>
+      <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <a href="patient.html"><button class="buttons">Patient Dashboard</button></a>
+        <a href="doctor.html"><button class="buttons">Doctor Dashboard</button></a>
+      </div>
+    </section>
+
+    <h1 id="heading_2">Explore our Specialists:</h1>
+    <div class="available_categories">
+      <div class="item">
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const darkToggle = document.getElementById("darkModeSwitch");
+      const body = document.body;
+
+      const isDark = localStorage.getItem("darkMode") === "true";
+      if (isDark) body.classList.add("dark");
+      if (darkToggle) darkToggle.checked = isDark;
+
+      if (darkToggle) {
+        darkToggle.addEventListener("change", () => {
+          body.classList.toggle("dark");
+          localStorage.setItem("darkMode", body.classList.contains("dark"));
+        });
+      }
+
+      const nameOverlay = document.getElementById("nameOverlay");
+      const storedName = localStorage.getItem("userName");
+
+      if (storedName) {
+        nameOverlay.style.display = "none";
+        const greeting = document.getElementById("personal_greeting");
+        greeting.textContent = `Hello, ${storedName}!`;
+        greeting.style.opacity = 1;
+      }
+    });
+
+    function saveUserName() {
+      const input = document.getElementById("userNameInput").value.trim();
+      if (input.length < 2) {
+        alert("Please enter a valid name.");
+        return;
+      }
+      localStorage.setItem("userName", input);
+      document.getElementById("nameOverlay").style.display = "none";
+      const greeting = document.getElementById("personal_greeting");
+      greeting.textContent = `Hello, ${input}!`;
+      greeting.style.opacity = 1;
+    }
+
+    function resetUser() {
+      if (confirm("Are you sure you want to reset your preferences?")) {
+        localStorage.removeItem("userName");
+        localStorage.removeItem("darkMode");
+        location.reload();
+      }
+    }
+  </script>
 </body>
 </html>

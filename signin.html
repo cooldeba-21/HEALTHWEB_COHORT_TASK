@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sign In - N6T Technology</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .signin-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background: linear-gradient(to right, #0d161d, #1a4234);
+      color: white;
+    }
+
+    .signin-container h1 {
+      margin-bottom: 20px;
+    }
+
+    .role-buttons {
+      margin-bottom: 30px;
+    }
+
+    .role-buttons button {
+      margin: 0 10px;
+      padding: 12px 24px;
+      border-radius: 30px;
+      background-color: rgba(0, 176, 152, 0.7);
+      border: 1px solid white;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .role-buttons button:hover {
+      background-color: white;
+      color: rgb(0, 176, 152);
+    }
+
+    form {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+
+    input {
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      width: 250px;
+      font-size: 16px;
+    }
+
+    .form-submit {
+      background-color: rgba(0, 176, 152, 0.7);
+      color: white;
+      border: 1px solid white;
+      cursor: pointer;
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+
+    .form-submit:hover {
+      background-color: white;
+      color: rgb(0, 176, 152);
+    }
+  </style>
+</head>
+<body>
+  <div class="signin-container">
+    <h1>Sign In</h1>
+    <div class="role-buttons">
+      <button onclick="showForm('patient')">Patient</button>
+      <button onclick="showForm('doctor')">Doctor</button>
+    </div>
+
+    <form id="patient-form" onsubmit="handleSignIn(event, 'patient')">
+      <input type="text" id="patient-id" placeholder="Patient ID" required />
+      <input type="password" id="patient-password" placeholder="Password" required />
+      <button class="form-submit" type="submit">Sign In as Patient</button>
+    </form>
+
+    <form id="doctor-form" onsubmit="handleSignIn(event, 'doctor')">
+      <input type="text" id="doctor-id" placeholder="Doctor ID" required />
+      <input type="password" id="doctor-password" placeholder="Password" required />
+      <button class="form-submit" type="submit">Sign In as Doctor</button>
+    </form>
+  </div>
+
+  <script>
+    function showForm(role) {
+      document.getElementById('patient-form').style.display = 'none';
+      document.getElementById('doctor-form').style.display = 'none';
+      document.getElementById(role + '-form').style.display = 'flex';
+    }
+
+    function handleSignIn(event, role) {
+      event.preventDefault();
+      if (role === 'patient') {
+        window.location.href = 'patient.html';
+      } else if (role === 'doctor') {
+        window.location.href = 'doctor.html';
+      }
+    }
+  </script>
+</body>
+</html>

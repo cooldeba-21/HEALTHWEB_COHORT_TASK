@@ -1,216 +1,287 @@
-*{
-    margin: 0;
-    padding: 0;
-    font-family: century gothic;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Century Gothic", sans-serif;
 }
-button{
-    cursor: pointer;
+body {
+  background-color: #fff;
+  color: #000;
 }
-.quick_nav_bar{
-    display: flex;
-    height: 70px;
-    justify-content: space-evenly;
-    align-items: baseline;
-    background-color: rgb(13, 22, 13);
+button {
+  cursor: pointer;
+  border: none;
 }
-#logo{
-    font-family: sans-serif;
-    color: white;
-    font-size: 20px;
-    font-weight: bolder;
-    border: 0.5px solid white;
-    padding: 15px;
+
+.quick_nav_bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 70px;
+  background-color: rgb(13, 22, 13);
 }
-#search_bar{
-    display: flex;
-    height: 80%;
-    width: 600px;
+#logo {
+  color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  border: 0.5px solid white;
+  padding: 15px;
 }
-#user_Acc{
-    height: 100%;
-    width: 70px;
+
+#search_bar {
+  display: flex;
+  width: 600px;
+  height: 60%;
+  border: 0.5px solid white;
+  border-radius: 8px;
 }
-#appointments{
-    height: 100%;
-    width:150px;
+#input_bar {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  padding: 20px 10px;
+  border-radius: 8px 0 0 8px;
 }
-#updates_notifications{
-    height: 100%;
-    width: 70px;
+#input_bar:focus {
+  box-shadow: 0 0 5px green;
 }
-#hit_to_search_button{
-    height: 100%;
-    width: 70px;
-    background: none;
-    border: none;
-    outline: none;
-    font-size: 20px;
-    color: white;
-    border-left: 0.5px solid white ;
+input::placeholder {
+  font-style: italic;
+  padding-left: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-#hit_to_search_button:hover{
-    border-radius: 0 8px 8px 0;
-    color: rgb(0, 176, 152);
+#hit_to_search_button {
+  width: 70px;
+  font-size: 20px;
+  background: none;
+  color: white;
+  border-left: 0.5px solid white;
 }
-#search_bar{
-    border: 0.5px white solid;
-    border-radius: 8px;
-    height: 60%;
+#hit_to_search_button:hover {
+  color: rgb(0, 176, 152);
 }
-#input_bar{
-    width: 100%;
-    border:none;
-    outline: 0;
-    font-size: 18px;
-    padding-left: 10px;
-    padding: 20px;
-    border-radius: 8px 0 0 8px;
+
+#user_Acc, #appointments, #updates_notifications,
+#help_icon, #lang_selector, #emergency, #dark_toggle {
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  height: 100%;
 }
-#input_bar:focus{
-    box-shadow: 0 0 10px 1px solid green;
+#user_account, #notification_bell, #help_icon button {
+  background: none;
+  color: white;
+  font-size: 20px;
 }
-#user_account{
-    width: 100%;
-    height: 100%;
-    font-size: 20px;
-    background: none;
-    border: none;
-    color: white;
+#user_account:hover, #help_icon button:hover {
+  color: rgb(0, 176, 152);
 }
-#user_account:hover{
-    color:rgb(0, 176, 152) ;
+#notification_bell {
+  font-size: 25px;
 }
-#my_appointments{
-    height: 70%;
-    width: 100%;
-    background: none;
-    border: 0.5px white solid;
-    color: white;
-    font-size: 15px;
-    border-radius: 4px;
-}
-#my_appointments:hover{
-    background-color: white;
-    color: rgb(0, 176, 152);
-}
-#notification_bell{
-    height: 70%;
-    width: 100%;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 25px;
-}
-input::placeholder{
-    font-style: italic;
-    padding-left: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-#notification_bell:hover{
-    animation: ring 0.25s  normal 2 ;
+#notification_bell:hover {
+  animation: ring 0.25s normal 2;
 }
 @keyframes ring {
-    0%{
-        padding-left:7px ;
-    }
-    50%{
-        padding-right:7px ;
-    }
-    100%{
-        padding:0 ;
-    }
+  0% { padding-left: 7px; }
+  50% { padding-right: 7px; }
+  100% { padding: 0; }
 }
-.introduction{
-    padding-top: 160px;
-    text-align: center;
-    width: 100vw;
-    height: 600px;
-    background: linear-gradient(to bottom, rgb(13, 22, 13) , rgba(0, 108, 42,0.95)) ,url(OIP2.jpg);
-    background-size: cover;
-    background-blend-mode: multiply;
-    display: grid;
-    place-items: center;
-    color: white;
-    grid-template-rows: 100px 100px 100px 100px;
+#my_appointments {
+  height: 70%;
+  background: none;
+  color: white;
+  border: 0.5px solid white;
+  padding: 8px 12px;
+  font-size: 15px;
+  border-radius: 4px;
+}
+#my_appointments:hover {
+  background-color: white;
+  color: rgb(0, 176, 152);
+}
+
+.introduction {
+  padding-top: 160px;
+  text-align: center;
+  background: linear-gradient(to bottom, rgb(13, 22, 13), rgba(0, 108, 42, 0.95)), url("OIP2.jpg");
+  background-size: cover;
+  background-blend-mode: multiply;
+  height: 600px;
+  display: grid;
+  grid-template-rows: 100px 100px 100px 100px;
+  place-items: center;
+  color: white;
 }
 #welcome {
   font-size: 40px;
   font-weight: bolder;
+  overflow: hidden;
   white-space: nowrap;
-  overflow: hidden;    
   width: 0;
-  animation: typewriter 2s steps(28, end) 1 forwards;
-}
-#description{
-    font-size:20px
+  animation: typewriter 2s steps(28, end) forwards;
 }
 @keyframes typewriter {
-  from {
-    width: 0;
-  }
-  to {
-    width: 28ch;
-  }
+  from { width: 0; }
+  to { width: 28ch; }
 }
-.available_categories{
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: 350px 350px 350px 350px;
+#description {
+  font-size: 20px;
 }
-.item{
-    display: flex;
-    height: 500px;
-    width: 350px;
-    box-shadow: 5px 10px 10px rgb(165, 165, 165) ;
-    margin-left: 10px;
-    border-radius: 8px;
-    border-top: 1px solid green;
-    border-left: 1px solid green;
-    justify-content: center;
-    cursor: pointer;
-    animation: appear 3s;
-    animation-timeline: view();
-    animation-range: entry 0% cover 40%;
+.auth_buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
 }
-.image_of_type{
-    margin-top: 20px;
-    height: 240px;
-    width: 300px;
+.buttons {
+  height: 50px;
+  width: 150px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: rgba(25, 110, 37, 0.346);
+  border: 0.25px solid white;
+  color: white;
+  transition: all 0.3s;
 }
-.service_image{
-    height: 100%;
-    width: 100%;
-    border-radius: 8px;
-    border: 2px solid rgba(0, 100, 0, 0.546);
+.buttons:hover {
+  background-color: white;
+  color: rgb(25, 110, 37);
+  box-shadow: 0 0 5px rgb(0, 128, 79);
 }
-.buttons{
-    height: 60px;
-    width: 300px;
-    border-radius:30px;
-    font-size: 15px ;
-    background-color: rgba(25, 110, 37, 0.346);
-    box-shadow: 0 0 5px ;
-    border: 0.25px white solid;
-    color: white;
-    cursor: pointer;
+.bottom_text {
+  font-size: 24px;
+  font-weight: 500;
 }
-.buttons:hover{
-    box-shadow: 0 0 5px rgb(0, 128, 79);
-    background-color: rgb(255, 255, 255);
-    color: rgb(25,110,37);
+
+#heading_2 {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 50px;
 }
-#heading_2{
-    text-align: center;
-    margin-top: 30px;
-    font-size: 50px;
+.available_categories {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 0 40px;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  box-shadow: 5px 10px 10px rgba(165, 165, 165, 0.6);
+  border-radius: 8px;
+  border-top: 1px solid green;
+  border-left: 1px solid green;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  animation: appear 2s ease;
 }
 @keyframes appear {
-    0%{
-        opacity: 0;
-        scale:0.5;
-    }
-    100%{
-        opacity: 1;
-        scale: 1;
-    }
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+.image_of_type {
+  margin-top: 20px;
+  height: 240px;
+  width: 300px;
+}
+.service_image {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  border: 2px solid rgba(0, 100, 0, 0.546);
+}
+
+#lang_selector select {
+  background: none;
+  border: 0.5px solid white;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+#lang_selector select option {
+  color: black;
+}
+.emergency_button {
+  background-color: red;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 25px;
+  font-weight: bold;
+  box-shadow: 0 0 5px #ff0000;
+}
+.emergency_button:hover {
+  background-color: rgb(255, 80, 80);
+  box-shadow: 0 0 10px #ff3333;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #2196F3;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+body.dark {
+  background-color: #111;
+  color: #eee;
+}
+body.dark .quick_nav_bar {
+  background-color: #1a1a1a;
+}
+body.dark #search_bar,
+body.dark #my_appointments,
+body.dark #input_bar {
+  border-color: #ccc;
+  background-color: #222;
+  color: #fff;
+}
+body.dark #input_bar::placeholder {
+  color: #aaa;
+}
+body.dark .buttons {
+  border-color: #aaa;
+}
+body.dark .buttons:hover {
+  background-color: #fff;
+  color: rgb(25, 110, 37);
+}
+body.dark #logo {
+  border-color: #fff;
 }
